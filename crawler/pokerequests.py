@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-
+todo:
+    1. time expire
 """
 __date__ = "Created on Mon Jan 22 08:51:42 2018"
 __version__ = "0.1.0"
@@ -36,6 +37,20 @@ FILE = os.path.dirname(__file__)
 def PokeCrawlerError(Exception):
     pass
 
+def get_current_loc():
+    """
+    use IP to generate the location
+    very inaccurate!
+    
+    todo: use google maps api
+    https://developers.google.com/maps/documentation/geocoding/start?csw=1
+    """
+    send_url = 'http://freegeoip.net/json'
+    r = requests.get(send_url)
+    j = json.loads(r.text)
+    lat = j['latitude']
+    lon = j['longitude']
+    return lat, lon
 
 def is_nearby(poke_lat_lng, current_lat_lng=(1.457501, 133.812063),
               radius=500):
