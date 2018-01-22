@@ -31,7 +31,7 @@ flt_r1 = 2000
 pkms = pokemaxcrawler.get_nearby_pkm_obj_list(current_lat_lng=loco,
                                               radius=flt_r1)
 colorprint(
-    "Within {} of location {}, Pokemons with IV>={} and Level>={} are:".format(
+    "Within {}m of location {}, Pokemons with IV>={} and Level>={} are:".format(
     flt_r1, loco, IV_min, Level_min), color="blue")
 for pkm in pkms:
     if pkm.level and pkm.iv >= IV_min and pkm.level >= Level_min:
@@ -46,7 +46,7 @@ my_uber_catch_list = ["Blissey", "Dragonite", "Snorlax", "Lapras", "Gyarados",
 pkms = pokemaxcrawler.get_nearby_pkm_obj_list(current_lat_lng=loco,
                                               radius=flt_r1)
 colorprint(
-    "Within {} of location {}, Pokemons Favourite of Favourite of are:".format(
+    "Within {}m of location {}, Pokemons Favourite of Favourite of are:".format(
     flt_r1, loco, IV_min, Level_min), color="blue")
 for pkm in pkms:
     if pkm.name in my_uber_catch_list:
