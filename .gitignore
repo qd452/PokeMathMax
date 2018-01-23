@@ -100,3 +100,4 @@ ENV/
 # mypy
 .mypy_cache/
 /telebot_api.json
+/geocoding/googlemap_api.json
